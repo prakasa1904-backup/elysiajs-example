@@ -25,7 +25,7 @@ run:
   name: elysiajs-example
   description: Elysiajs Example VM Deployment with dPanel
   command: ./server
-  port: 3000
+  port: 3001
   environment:
     - key: PORT
-      value: 3000
+      value: 3001
