@@ -13,3 +13,7 @@ bun run dev
 ```
 
 Open http://localhost:3000/ with your browser to see the result.
+
+## References
+
+- [Elysiajs Official Document](https://elysiajs.com/at-glance.html)

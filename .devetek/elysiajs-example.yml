@@ -1,0 +1,31 @@
+# Cloud Devetek Standard Definition v0.0.1-alpha.0 Go Example
+version: v0.0.1-alpha.0
+
+setup:
+  language:
+    name: bun
+    version: 1.2.1
+
+# https://bun.sh/guides/ecosystem/elysia
+build:
+  target:
+    machine:
+      workdir: .
+      steps:
+        - name: "Build Elysiajs with Bun"
+          command:
+            - bun i
+            - bun run build
+        # create your distributed storage to store your artifact (supported: s3, gcs, local, ftp, dpanel-agent-artifact)
+        - name: "Create Application Artifact" 
+          archive:
+            - server
+
+run:
+  name: elysiajs-example
+  description: Elysiajs Example VM Deployment with dPanel
+  command: ./server
+  port: 3000
+  environment:
+    - key: PORT
+      value: 3000
